@@ -1,5 +1,5 @@
 //default language code, can be overwritten with lang parameter in URL
-var lang = "en"; //for available codes see array availableLanguages in file GlobalOptions.js
+var lang = "pt_BR"; //for available codes see array availableLanguages in file GlobalOptions.js
 
 //Help file (must be a local file)
 var helpfile = "help_en.html";
@@ -10,7 +10,7 @@ var customGetUrlParamsParser = null;
 //Servername (optional) and path and name name of QGIS Server FCGI-file
 //either with or without server-name - without servername recommended for easier porting to other servers
 //do not add a ? or & after the .fcgi extension
-var serverAndCGI = "/cgi-bin/qgis_mapserv.fcgi";
+var serverAndCGI = "C:/OSGeo4W/apps/qgis/bin/qgis_mapserv.fcgi";
 
 //Optional url for print server hosted on a different server. Default: same as above.
 // var serverAndCGI = "http://otherserver/cgi-bin/qgis_mapserv.fcgi";
@@ -19,7 +19,7 @@ var printServer = serverAndCGI;
 //Define whether you want to use the GetProjectSettings extension of QGIS Server
 //for more configuration options in the project.
 //Set this to false to use GetCapabilities for older QGIS Server versions (<= 1.8).
-var useGetProjectSettings = true;
+var useGetProjectSettings = false;
 
 // show the layerOrderTab in the GUI
 var showLayerOrderTab = true;
@@ -265,7 +265,7 @@ var layerImageFormats = [
 */
 
 //EPSG projection code of your QGIS project
-var authid = "EPSG:"+3857;
+var authid = "EPSG:"+4326;
 
 //background transparency for the QGIS Server generated layer (commercial background layers not effected)
 //set to true if you want the background to be transparent, layer image will be bigger (32 vs 24bit)
@@ -321,7 +321,7 @@ if (enableOSMMaps) {
 }
 else {
   overviewLayer = new OpenLayers.Layer.WMS("Overview-Map",
-  serverAndCGI+"?map=/home/web/qgis-web-client/projects/naturalearth_110million.qgs",
+  serverAndCGI+"?map=C:\OSGeo4W/home/web/qgis-web-client/projects/naturalearth_110million.qgs",
   {layers:"Land",format:"image/png"},
   {buffer:0,singleTile:true,transitionEffect:"resize"});
 }

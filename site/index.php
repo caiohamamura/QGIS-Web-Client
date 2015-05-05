@@ -1,10 +1,10 @@
 <?php
-    $PROJECTS_DIR = '<absolute-path-to-qgis-server-projects>/'
+    $PROJECTS_DIR = 'C:/OSGeo4W/home/web/qgis-web-client/projects/'
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <title>QGIS Mapserver Client</title>
+    <title>QGIS Mapserver Client2</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <!-- Framework CSS --> 
     <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection"> 
@@ -36,7 +36,7 @@
             foreach(glob($PROJECTS_DIR.'*.qgs') as $file) {
                 $filename = substr($file, 0, -4);
                 $filename = end(explode('/', $filename));
-                print "<li class='map-item'><a href='maps/$filename'>$filename</a></li>\n";
+                print "<li class='map-item'><a href='qgiswebclient.html?map=$PROJECTS_DIR$filename.qgs'>$filename</a></li>\n";
             }
             ?>
           </ul>
